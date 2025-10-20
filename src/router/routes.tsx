@@ -1,5 +1,5 @@
 
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createHashRouter, Navigate } from 'react-router-dom';
 import type { ReactNode } from 'react';
 
 import App from '../App';
@@ -51,6 +51,4 @@ const routes = [
 ];
 
 //  GitHub Pages: basename = import.meta.env.BASE_URL
-export const router = createBrowserRouter(routes, {
-  basename: import.meta.env.BASE_URL,
-});
+export const router = createHashRouter(routes);
