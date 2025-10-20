@@ -1,0 +1,70 @@
+/* =========================
+   Category Filter Buttons
+   ========================= */
+
+/* Wrapper for category pills */
+.cat-filter {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+}
+
+/* Category buttons (pills) */
+.cat-filter button {
+  padding: 10px 18px;
+  font-size: 1.05rem;
+  border-radius: 10px; 
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  line-height: 1.1;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* Hover */
+.cat-filter button:hover {
+  border-color: #f3c64b;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Active */
+.cat-filter button.active {
+  background: #fee58d;
+  border-color: #f3c64b;
+  font-weight: 600;
+}
+
+/* Keyboard focus */
+.cat-filter button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(243, 198, 75, 0.35);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* ≤1024px: slightly smaller gaps/padding (tablets) */
+@media (max-width: 1024px) {
+  .cat-filter { gap: 10px; }
+  .cat-filter button {
+    padding: 9px 16px;
+    font-size: 1rem;
+  }
+}
+
+/* ≤768px: compact pills (mobile) */
+@media (max-width: 768px) {
+  .cat-filter { gap: 8px; }
+  .cat-filter button {
+    padding: 8px 14px;
+    font-size: 0.95rem;
+  }
+}

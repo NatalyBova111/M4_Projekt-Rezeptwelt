@@ -1,0 +1,97 @@
+/* =========================
+   Header styles
+   ========================= */
+
+/* Fixed header on top */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: #fff;
+  z-index: 9999;
+  border-bottom: 1px solid #eee;
+}
+
+.header__row {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+}
+.logo__icon { width: 22px; height: 22px; display: block; }
+
+/* Navigation: links + buttons */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Plain nav links */
+.nav-link {
+  text-decoration: none;
+  padding: 6px 0;
+  color: var(--text);
+}
+
+/* Active plain link (not a button) */
+.nav-link.active {
+  border-bottom: 2px solid var(--yellow);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* ≤1024px: tighter spacing */
+@media (max-width: 1024px) {
+  .nav { gap: 14px; }
+  .nav-link { padding: 4px 0; }
+}
+
+/* ≤768px: one-line horizontal scroller for all items */
+@media (max-width: 768px) {
+  .header__row { padding: 0 8px; gap: 8px; }
+
+  /* compact logo */
+  .logo { gap: 6px; }
+  .logo__icon { width: 20px; height: 20px; }
+
+  .logo span { display: none; } 
+
+  .nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: center;
+    gap: 12px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    min-width: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav-link { padding: 4px 0; font-size: 0.95rem; }
+
+  /* keep buttons sized but inline with links */
+  .nav__login,
+  .nav__logout {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 14px;
+    flex: 0 0 auto; /* safeguard if parent switches to flex elsewhere */
+  }
+}

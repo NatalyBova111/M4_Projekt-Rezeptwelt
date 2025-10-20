@@ -1,0 +1,117 @@
+/* Formular-Karte */
+.profil__form {
+  padding: 20px;
+  border-radius: 16px;
+}
+
+/* 2 Spalten (Desktop) */
+.profil__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  align-items: start;
+}
+
+/* Label + Input */
+.form-control { display: grid; gap: 8px; }
+.form-control label { font-size: 0.9rem; color: #444; }
+
+/* Eingabefelder */
+.form-control input {
+  width: 100%;
+  height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 1rem;
+  line-height: 1.2;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+.form-control input:focus {
+  outline: none;
+  border-color: #f5c542;
+  box-shadow: 0 0 0 3px rgba(245, 197, 66, .25);
+}
+.form-control input:disabled {
+  background: #f7f7f7;
+  color: #666;
+}
+
+/* Formular-Buttons */
+.profil__form .actions { margin-top: 16px; }
+
+/* Hinweise/Alerts */
+.alert {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.alert--error {
+  background: #ffe8e8;
+  color: #a40000;
+  border: 1px solid #ffcccc;
+}
+.alert--ok {
+  background: #e6ffed;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* 2-spaltiges Layout (Avatar + Inhalt) */
+.profil__layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+/* Linke Spalte: Foto */
+.profil__avatar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.profil__avatar-box {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profil__avatar-box img { width: 100%; height: 100%; object-fit: cover; }
+.profil__avatar-empty { color: #999; font-size: 0.9rem; }
+
+/* Foto-Button (Farbe/Höhe aus App.css) */
+.profil__avatar-col .btn-upload {
+  align-self: center;
+  justify-self: center;
+  width: auto;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* ≤1024px: Layout stapeln (mehr Platz für Inhalte) */
+@media (max-width: 1024px) {
+  .profil__layout { grid-template-columns: 1fr; }
+}
+
+/* ≤768px: Form-Grid auf 1 Spalte, kompaktere Avatare */
+@media (max-width: 768px) {
+  .profil__grid { grid-template-columns: 1fr; }
+  .profil__avatar-box {
+    width: 120px;
+    height: 120px;
+  }
+}

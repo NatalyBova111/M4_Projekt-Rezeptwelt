@@ -1,0 +1,194 @@
+:root {
+  /* Farben & Theme */
+  --yellow: #f3c64b;
+  --text: #222;
+  --muted: #6b7280;
+  --card: #f7f7f7;
+  --radius: 16px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Fixierter Header */
+  --header-h: 56px;
+
+  /* Einheitliche Buttons */
+  --btn-h: 32px;
+  --btn-radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+/* Grundstruktur */
+html, body, #root { height: 100%; }
+
+body {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: var(--text);
+  margin: 0;
+  background: #fff;
+  /* Platz für fixierten Header */
+  padding-top: var(--header-h);
+}
+
+.app-shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+/* Kein negativer erster Abstand in main */
+main > :first-child { margin-top: 0 !important; }
+
+.app-shell, main { overflow: visible; }
+
+/* Utilities / Layout */
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.section { padding: 36px 0; }
+
+.h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+/* Karten */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Seitenüberschrift */
+.page-heading {
+  margin-top: 2.2rem;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.page-heading h1,
+.page-heading h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+/* ===================================
+   Einheitlicher Button-Stil
+   =================================== */
+button,
+.btn,
+.btn-primary,
+.btn-upload,
+.nav-btn,
+.nav__login,
+.nav__logout {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: var(--btn-h);
+  padding: 0 18px !important;
+  border-radius: var(--btn-radius);
+  line-height: 1 !important;
+  font-weight: 600;
+  font-size: 16px;
+
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Gelber Button (z.B. Zum Rezept) */
+.btn-primary {
+  background-color: #fee58d;
+  color: #000;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: #f5d34d;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Graue Buttons (Upload / Login / Logout) */
+.btn-upload,
+.nav-btn--login,
+.nav-btn--logout,
+.nav__login,
+.nav__logout {
+  background-color: #6b7280;
+  color: #fff;
+}
+
+.btn-upload:hover,
+.nav-btn--login:hover,
+.nav-btn--logout:hover,
+.nav__login:hover,
+.nav__logout:hover {
+  background-color: #4b5563;
+  transform: translateY(-1px);
+}
+
+button:disabled,
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.add-recipe .form-control .btn-upload { justify-self: start; }
+
+a.btn,
+a.btn:link,
+a.btn:visited,
+.recipe-row__btn,
+.recipe-row__btn:visited,
+.recipe-card__actions .btn,
+.recipe-card__actions .btn:visited {
+  color: #000 !important;
+}
+
+/* Fallback: Links in gelben Buttons */
+.btn:visited { color: #000 !important; }
+
+/* =========================
+   Responsive
+   ========================= */
+
+/* ≤ 1024px: 3 → 2 Spalten, moderat kleinere Abstände */
+@media (max-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .section { padding: 28px 0; }
+  .page-heading h1,
+  .page-heading h2 { font-size: 1.8rem; }
+}
+
+/* ≤ 768px: 2/3 → 1 Spalte */
+@media (max-width: 768px) {
+  .grid-3 { grid-template-columns: 1fr; }
+  .section { padding: 20px 0; }
+  .h1 { font-size: 24px; }
+  .page-heading { margin-top: 1.6rem; }
+  .page-heading h1,
+  .page-heading h2 { font-size: 1.6rem; }
+}

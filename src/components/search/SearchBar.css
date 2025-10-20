@@ -1,0 +1,15 @@
+.searchbar{
+  display:flex; align-items:center; gap:8px;
+  padding:8px; border:1px solid #e5e7eb; border-radius:12px; background:#fff;
+}
+.searchbar__input{
+  flex:1; height:40px; padding:8px 10px; border:1px solid #e5e7eb;
+  border-radius:10px; font:inherit;
+}
+.searchbar__input:focus{ outline:none; border-color:#f5c542; box-shadow:0 0 0 3px rgba(245,197,66,.25); }
+.searchbar__btn{ height:40px; }
+.searchbar__clear{
+  height:40px; width:40px; border-radius:10px; border:1px solid #e5e7eb; background:#fafafa;
+  font-size:20px; line-height:1; cursor:pointer;
+}
+.searchbar__clear:hover{ background:#f3f4f6; }
