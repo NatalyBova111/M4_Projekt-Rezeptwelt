@@ -88,6 +88,6 @@ Die Rezeptwelt – ein Lern- und Showcase-Projekt für moderne Webentwicklung mi
 («Die Rezeptwelt» — учебный и демонстрационный проект по современной веб-разработке на React и Supabase.)
 
 👤 Entwickler (разработчик): [Nataly Bova]
-🌐 GitHub: https://github.com/
+🌐 GitHub: https://github.com/NatalyBova111/M4_Projekt-Rezeptwelt
 
 📅 Letzte Aktualisierung / Последнее обновление: Oktober 2025
