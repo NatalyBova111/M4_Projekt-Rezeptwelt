@@ -13,7 +13,7 @@ import Login from '../pages/auth/Login';
 import Profil from '../pages/profil/Profil';
 import { useAuth } from '../context/AuthProvider';
 
-// Guards
+// Guards as components
 function AuthOnly({ children }: { children: ReactNode }) {
   const { user } = useAuth();
   return user ? <>{children}</> : <Navigate to="/login" replace />;
@@ -23,7 +23,6 @@ function GuestOnly({ children }: { children: ReactNode }) {
   return user ? <Navigate to="/" replace /> : <>{children}</>;
 }
 
-// 404
 function NotFound() {
   return (
     <div className="container section">
@@ -34,21 +33,20 @@ function NotFound() {
 
 const routes = [
   {
-    path: '/',
+    path: '/',                
     element: <App />,
-    errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
       { path: 'rezepte', element: <Rezepte /> },
       { path: 'rezept/:id', element: <Rezept /> },
       { path: 'ueber-uns', element: <UeberUns /> },
       { path: 'login', element: <GuestOnly><Login /></GuestOnly> },
-      { path: 'rezept-hinzufuegen', element: <AddRecipe /> },
-      { path: 'rezept/:id/bearbeiten', element: <EditRecipe /> },
-      { path: 'profil', element: <Profil /> }, // <- без ведущего слэша
+      { path: 'rezept-hinzufuegen', element: <AuthOnly><AddRecipe /></AuthOnly> },
+      { path: 'rezept/:id/bearbeiten', element: <AuthOnly><EditRecipe /></AuthOnly> },
+      { path: 'profil', element: <AuthOnly><Profil /></AuthOnly> },
+      { path: '*', element: <NotFound /> },   
     ],
   },
 ];
 
-//  GitHub Pages: basename = import.meta.env.BASE_URL
 export const router = createHashRouter(routes);

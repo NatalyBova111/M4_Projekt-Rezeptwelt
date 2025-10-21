@@ -23,36 +23,52 @@ export default function Rezept() {
         .select('*')
         .eq('id', id)
         .single();
-      setRecipe(data as Recipe);
+      setRecipe(data as Recipe | null);
 
       const { data: ii } = await supabase
         .from('ingredients')
         .select('*')
         .eq('recipe_id', id)
         .order('name', { ascending: true });
-      setIngs(ii || []);
+      setIngs(ii ?? []);
     })();
   }, [id]);
+
 
   if (!recipe) return null;
 
   const hero = (recipe as any).image_url || fallbackImg;
 
-  // "Zusätzliche Informationen"
-  const [stepsPart, infoPart] = recipe.instructions
-    ? recipe.instructions.split(/Zusätzliche Informationen:/i)
-    : ['', ''];
+  
+  const instr = recipe.instructions ?? '';
 
-  const steps = stepsPart
-    .split(/\n?\s*\d+\.\s+/)
-    .map(s => s.trim())
-    .filter(Boolean);
+  
+  const [stepsPartRaw, infoPartRaw] = instr.split(/Zusätzliche Informationen:/i);
+
+  const stepsPart = (stepsPartRaw ?? '').toString();
+  const infoPart = (infoPartRaw ?? '').toString();
+
+  const steps = (() => {
+    const byNumbers = stepsPart
+      .split(/\n?\s*\d+\.\s+/) // 1. 2. 3.
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    if (byNumbers.length > 1) return byNumbers;
+
+    // fallback 
+    return stepsPart
+      .split(/\r?\n+/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+  })();
 
   return (
     <article className="container section">
-  
       <div className="recipe-actions" style={{ display: 'flex', gap: 12, margin: '12px 0' }}>
-        <button className="back-btn" onClick={() => navigate(-1)}>← Zurück</button>
+        <button className="back-btn" onClick={() => navigate(-1)}>
+          ← Zurück
+        </button>
 
         {user && (recipe as any).owner_id === user.id && (
           <button
@@ -73,7 +89,7 @@ export default function Rezept() {
         <>
           <h3>Zutaten</h3>
           <ul>
-            {ings.map(i => (
+            {ings.map((i) => (
               <li key={i.id}>
                 {i.quantity ?? ''} {i.unit ?? ''} {i.name}
                 {i.additional_info ? ` — ${i.additional_info}` : ''}
