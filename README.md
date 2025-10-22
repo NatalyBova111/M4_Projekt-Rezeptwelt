@@ -33,8 +33,6 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
 - 🗄️ **Supabase** – Datenbank & Authentifizierung  
   
 - 🎨 **Tailwind CSS / eigene Styles** – flexibles Styling-System  
-  
-- ☁️ **Deployment:** Vercel oder Netlify  
 
 
 
@@ -53,9 +51,7 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
     🔐 Login via Supabase Auth (E-Mail-Link) 
 
 
-<h2 align="center">📸 Screenshots</h2>
-
-<p align="center">Ein Blick auf die Benutzeroberfläche der <b>Rezeptwelt</b> App:</p>
+## 📸 Screenshots 
 
 <table>
   <tr>
