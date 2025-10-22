@@ -12,10 +12,10 @@ export default function RecipeCard({ recipe }: Props) {
   return (
     <article className="card recipe-card">
 
-      <div className="recipe-card__media">
-        <img className="recipe-card__img" src={img} alt={recipe.name} />
-        <FavouriteButton recipeId={recipe.id} size={36} />
-      </div>
+<div className="recipe-card__media">
+  <img className="recipe-card__img" src={img} alt={recipe.name} />
+  <FavouriteButton recipeId={recipe.id} size={36} />
+</div>
 
       <div className="recipe-card__content">
         <div className="recipe-card__text">

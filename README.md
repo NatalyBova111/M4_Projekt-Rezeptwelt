@@ -37,34 +37,6 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
 - ☁️ **Deployment:** Vercel oder Netlify  
 
 
----
-
-## 📁 Projektstruktur 
-
-src/
-│
-├── assets/             → Bilder, Icons, Logos 
-│
-├── components/         → Wiederverwendbare UI-Komponenten 
-│   ├── Hero/           → Titelbild-Bereich 
-│   ├── Header/         → Navigation & Login/Logout 
-│   ├── Footer/         → Seitenfuß mit Social Links 
-│   └── RecipeCard/     → Einzelne Rezeptkarte 
-│
-├── pages/              → Seiten des Projekts 
-│   ├── Home/           → Startseite mit Hero, Kategorien, beliebten Rezepten
-│   ├── Rezepte/        → Rezeptliste mit Filter
-│   ├── RezeptDetail/   → Detailansicht eines Rezepts
-│   ├── UeberUns/       → Statische „Über uns“-Seite
-│   └── Login/          → Authentifizierungsseite
-│
-├── supabase/           → Verbindung & Funktionen zur Datenbank 
-│
-├── types/              → TypeScript-Typdefinitionen 
-│
-├── styles/             → Globale CSS-Dateien 
-│
-└── main.tsx            → Einstiegspunkt der App 
 
 ## 🧩 Hauptfunktionen 
 
