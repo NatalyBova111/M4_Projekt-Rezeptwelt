@@ -52,6 +52,11 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
 
     🔐 Login via Supabase Auth (E-Mail-Link) 
 
+
+<h2 align="center">📸 Screenshots</h2>
+
+<p align="center">Ein Blick auf die Benutzeroberfläche der <b>Rezeptwelt</b> App:</p>
+
 <table>
   <tr>
     <td>
