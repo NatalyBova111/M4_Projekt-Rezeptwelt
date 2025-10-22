@@ -34,7 +34,7 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
   
 - 🎨 **Tailwind CSS / eigene Styles** – flexibles Styling-System  
 
-
+---
 
 ## 🧩 Hauptfunktionen 
 
@@ -49,7 +49,8 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
     🖼️ Upload von Rezeptbildern 
 
     🔐 Login via Supabase Auth (E-Mail-Link) 
-
+    
+---
 
 ## 📸 Screenshots 
 
@@ -75,7 +76,7 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
 
 
 
-
+---
 
 
 ## 👨‍💻 Autor 
