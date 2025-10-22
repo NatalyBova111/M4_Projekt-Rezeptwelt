@@ -36,19 +36,14 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
 
 ---
 
-## 🧩 Hauptfunktionen 
+## 🧩 Hauptfunktionen
 
-    🔎 Suche nach Rezeptnamen oder Zutaten 
-
-    🍽️ Filter nach Kategorien 
-
-    🖋️ Rezepte hinzufügen & bearbeiten 
-
-    💾 Favoriten speichern 
-
-    🖼️ Upload von Rezeptbildern 
-
-    🔐 Login via Supabase Auth (E-Mail-Link) 
+- 🔍 **Suche nach Rezeptnamen oder Zutaten**
+- 🧾 **Filter nach Kategorien**
+- ✏️ **Rezepte hinzufügen & bearbeiten**
+- 💜 **Favoriten speichern**
+- 🖼️ **Upload von Rezeptbildern**
+- 🔐 **Login via Supabase Auth (E-Mail-Link)**
     
 ---
 
