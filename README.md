@@ -52,13 +52,25 @@ Die App ist vollständig responsiv und funktioniert auf Desktop, Tablet und Smar
 
     🔐 Login via Supabase Auth (E-Mail-Link) 
 
-    <img width="787" height="895" alt="image" src="https://github.com/user-attachments/assets/66d68fc8-501c-4282-9444-0050cd074e75" />
+<table>
+  <tr>
+    <td>
+      <img width="380" alt="image" src="https://github.com/user-attachments/assets/66d68fc8-501c-4282-9444-0050cd074e75" />
+    </td>
+    <td>
+      <img width="380" alt="image" src="https://github.com/user-attachments/assets/05b0e340-d459-4c29-8826-c9efdeba0d35" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img width="380" alt="image" src="https://github.com/user-attachments/assets/586c6afa-c4b4-4a45-8a09-4b713f09ad00" />
+    </td>
+    <td>
+      <img width="380" alt="image" src="https://github.com/user-attachments/assets/bab22f6c-ded6-4f61-811c-410a09496be2" />
+    </td>
+  </tr>
+</table>
 
-    <img width="788" height="895" alt="image" src="https://github.com/user-attachments/assets/05b0e340-d459-4c29-8826-c9efdeba0d35" />
-
-    <img width="782" height="895" alt="image" src="https://github.com/user-attachments/assets/586c6afa-c4b4-4a45-8a09-4b713f09ad00" />
-
-    <img width="786" height="896" alt="image" src="https://github.com/user-attachments/assets/bab22f6c-ded6-4f61-811c-410a09496be2" />
 
 
 
